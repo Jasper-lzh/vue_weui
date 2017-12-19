@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="aplus-terminal" content="1">
+  <meta name="apple-mobile-web-app-title" content="">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="format-detection" content="telephone=no, address=no">
+  <link href=static/favicon.ico rel="shortcut icon" type=image/x-icon>
+  <link rel="stylesheet" type="text/css" href="static/public.css"/>
+  <script src="static/iconfont.js"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1d4099e9f127a3d89f5334a970ce2196";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <title>物业费账单</title>
+</head>
+<body>
+    <div id="app"></div>
+    <div style="display: none;">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog">
+            <div class="weui-dialog__hd"><strong class="weui-dialog__title">弹窗标题</strong></div>
+            <div class="weui-dialog__bd">弹窗内容，告知当前页面信息等</div>
+            <div class="weui-dialog__ft">
+                <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+            </div>
+        </div>
+    </div>
+    <a href="javascript:;" class="weui-btn weui-btn_default" id="showIOSActionSheet">iOS ActionSheet</a>
+    <div>
+        <div class="weui-mask" id="iosMask" style="display: none"></div>
+        <div class="weui-actionsheet" id="iosActionsheet">
+            <div class="weui-actionsheet__title">
+                <p class="weui-actionsheet__title-text">这是一个标题，可以为一行或者两行。</p>
+            </div>
+            <div class="weui-actionsheet__menu">
+                <div class="weui-actionsheet__cell">示例菜单</div>
+                <div class="weui-actionsheet__cell">示例菜单</div>
+                <div class="weui-actionsheet__cell">示例菜单</div>
+                <div class="weui-actionsheet__cell">示例菜单</div>
+            </div>
+            <div class="weui-actionsheet__action">
+                <div class="weui-actionsheet__cell" id="iosActionsheetCancel">取消</div>
+            </div>
+        </div>
+    </div>
+    <!-- built files will be auto injected -->
+</body>
+</html>
+<script type="text/javascript">
+  $(function(){
+        var $iosActionsheet = $('#iosActionsheet');
+        var $iosMask = $('#iosMask');
+
+        function hideActionSheet() {
+            $iosActionsheet.removeClass('weui-actionsheet_toggle');
+            $iosMask.fadeOut(200);
+        }
+
+        $iosMask.on('click', hideActionSheet);
+        $('#iosActionsheetCancel').on('click', hideActionSheet);
+        $("#showIOSActionSheet").on("click", function(){
+            $iosActionsheet.addClass('weui-actionsheet_toggle');
+            $iosMask.fadeIn(200);
+        });
+    });
+</script>
